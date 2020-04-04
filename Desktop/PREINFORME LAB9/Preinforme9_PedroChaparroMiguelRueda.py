@@ -1,22 +1,30 @@
-#Un algoritmo que dadas las coordenadas x1, y1, x2, y2 en el plano cartesiano
-#calcule la distancia euclidiana entre ellos (considere todos los valores positivos)
+#Leer las cinco notas obtenidas por un estudiantes y calcular su nota final
+# n1 = 15%, n2 = 20%, n3 = 15%, n4 = 30%, n5 = 20%
+#Si nota < 2.0 "No puede habilitar"
+#Si nota < 3.0 "Reprobó"
+#Si nota >= 3.0 "Aprobó"
+#Si nota > 4.5 "Felicitaciones"
 
-import math
+def cal_nota():
 
-def calcular_distancia(x1,y1,x2,y2):
+    nuevo = "Si"
 
-    d_euclidiana = math.sqrt((x2-x1)**2 + (y2-y1)**2)
-    return d_euclidiana
+    while nuevo == "Si":
 
-x1 = float(input("Ingrese la coordenada en X del primer punto: "))
-y1 = float(input("Ingrese la coordenada en Y del primer punto: "))
+        n1 = float(input("Ingrese la nota 1 obtenida por el estudiante: "))
+        n2 = float(input("Ingrese la nota 2 obtenida por el estudiante: "))
+        n3 = float(input("Ingrese la nota 3 obtenida por el estudiante: "))
+        n4 = float(input("Ingrese la nota 4 obtenida por el estudiante: "))
+        n5 = float(input("Ingrese la nota 5 obtenida por el estudiante: "))
 
-x2 = float(input("Ingrese la coordenada en X del segundo punto: "))
-y2 = float(input("Ingrese la coordenada en Y del segundo punto: "))
+        nota_final = (n1*0.15) + (n2*0.2) + (n3*0.15) + (n4*0.3) + (n5*0.2)
+        print("La nota final del estudiante es: {}".format(nota_final))
 
-distancia = calcular_distancia(x1,y1,x2,y2)
+        nuevo = input("¿Desea calcular un estudiante más? Escriba Si o No: ")
+        nuevo = nuevo.title()
 
-print("La distancia entre los puntos con coordenadas X1={}, Y1={}, X2= {} y Y2={} es: {}".format(x1,y1,x2,y2,distancia))
+cal_nota()
+
 
 
 
